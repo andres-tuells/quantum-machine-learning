@@ -1,0 +1,31 @@
+{
+  "name": "quantum-machine-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/vuepress/vuepress.js dev www",
+    "dev": "vuepress dev www",
+    "build": "vuepress build www -d docs && cp www/CNAME docs/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.11.0",
+    "markdown-it-attrs": "^2.3.2",
+    "markdown-it-footnote": "^3.0.1",
+    "markdown-it-katex": "^2.0.3",
+    "markdown-it-plantuml": "^1.3.0",
+    "markdown-it-tasklist": "^1.1.0",
+    "markdown-it-texmath": "^0.5.3",
+    "vue-magic-grid": "0.0.3"
+  },
+  "devDependencies": {
+    "vuepress": "^1.0.0-alpha.30",
+    "vuepress-plugin-flowchart": "^1.4.3"
+  }
+}
