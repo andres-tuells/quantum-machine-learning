@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'The Craziest Project',
-  description: 'The only way to be sane is to be mad.',
+  title: 'QML',
+  description: 'Quantum Machine Learning from Scratch.',
   lastUpdated: 'Last Updated', // string | boolean
   plugins: [
     'flowchart'
@@ -14,100 +14,42 @@ module.exports = {
       md.use(require('markdown-it-tasklist'));
       md.use(require('markdown-it-plantuml'));
       md.use(require('markdown-it-attrs'));
-      md.use(require('markdown-it-container'), 'spoiler', {
-        validate: function(params) {
-          return params.trim().match(/^spoiler\s+(.*)$/);
-        },
-      
-        render: function (tokens, idx) {
-          console.log('RENDER SPOLIER');
-          var m = tokens[idx].info.trim().match(/^spoiler\s+(.*)$/);
-      
-          if (tokens[idx].nesting === 1) {
-            // opening tag
-            return '<details><summary>JOJOJO' + md.utils.escapeHtml(m[1]) + '</summary>\n';
-      
-          } else {
-            // closing tag
-            return '</details>\n';
-          }
-        }
-      });
     }
   },
   head: [
-    ['link', { rel: "icon", href: "/assets/img/infinite.png" }]
+    ['link', { rel: "icon", href: "/infinite.png" }]
   ],
   themeConfig: {
     displayAllHeaders: true, // Default: false
     sidebar: 'auto',
-    logo: "/assets/img/infinite.png",
+    logo: "/infinite.png",
     footer: "Ⓒ Andrés Tuells",
     nav: [
       { text: 'Home', link: '/' },
       {
-        text: 'Ghibli',
+        text: 'Quantum Theory',
         items: [
-          { text: 'Design', link: '/ghibli/design' },
-          { text: 'Dashboard', link: '/ghibli/dashboard' },
-          { text: 'Raspberry', link: '/ghibli/raspberry' },
-          { text: 'ES8266', link: '/ghibli/es8266' },
-          { text: 'Eyes', link: '/ghibli/eyes' },
-          { text: 'Beziers Curves', link: '/ghibli/beziers' }
+          { text: 'Quantum Mechanics', link: '/theory/qm' },
+          { text: 'Quantum Computation', link: '/theory/qm' },
+          { text: 'Quantum Information', link: '/theory/qi' },
         ]
       },
       {
-        text: 'Robotics',
+        text: 'Machine Learning',
         items: [
           { text: 'Project and Planning', link: '/robotics/'},
           { text: 'From Idea to Robotics', link: '/robotics/from-idea-to-robotics'}
         ]
       },
       {
-        text: 'AI',
-        items: [
-          { text: 'Machine Learning', 
-            items: [
-              { text: 'Intro', link: '/ai/ml/'},
-              { text: 'Random Forests in Deep', link: '/ai/ml/random-forest'}
-            ]
-          },
-          {
-            text: 'Deep Learning',
-            items: [
-              { text: 'Neural Networks', link: '/ai/dl/neural-networks'},
-              { text: 'Reinforced Learning', link: '/ai/dl/reinforced-learning'}
-            ]
-          },
-          { text: 'Math', link: '/ai/math/' }
-        ]
+        text: 'Programming', link: '/programming'
       },
       {
-        text: 'Electronics',
-        items: [
-          {
-            text: 'Microcontrollers',
-            items: [
-              { text: 'AVR Programming', link: '/electronics/microcontrollers/avr-programming'},
-              { text: 'ESP8266', link: '/electronics/microcontrollers/esp8266'}
-            ]
-          },
-        ]
+        text: 'Quantum Machine Learning', link: '/qml'
       },
       {
-        text: 'Clown',
-        items: [
-          { text: '1000 Faces Hero', link: '/clown/1000-faces-hero' },
-          { text: 'Costume', link: '/clown/costume' },
-          { text: 'Inspirations', link: '/clown/inspirations' }
-        ]
+        text: 'Github', link: 'https://github.com/andres-tuells/quantum-machine-learning'
       },
-      {
-        text: 'Nihongo',
-        items: [
-          { text: 'Particles', link: '/nihongo/particles' },
-        ]
-      }
     ]
     
   }
